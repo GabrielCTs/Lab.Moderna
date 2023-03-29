@@ -1,0 +1,230 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/GabrielCTs/Lab.Moderna/blob/main/C%C3%B3digo%20para%20calculo%20de%20Interfer%C3%AAncia%20e%20difra%C3%A7%C3%A3o\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Interferencia"
+      ],
+      "metadata": {
+        "id": "hHW6pO0JSdcW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# L =  distância da Fenda até o anteparo\n",
+        "L = float(input('Distância até o anteparo' ))\n",
+        "# Posição do máximo central\n",
+        "centro = float(input('Posição do máximo central' ))\n",
+        "# lamb = comprimento de onda do laser\n",
+        "lamb = float(632e-09)"
+      ],
+      "metadata": {
+        "id": "1YX-q7c9kwVo",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "fa066c14-c695-407f-8343-e501ac2e6238"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Distância até o anteparo232.4\n",
+            "Posição do máximo central11.2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y = float(input('Distância ao máximo: '))\n",
+        "if y <= centro:\n",
+        "    y = centro - y\n",
+        "else:\n",
+        "    y = -centro + y\n",
+        "print(y)\n"
+      ],
+      "metadata": {
+        "id": "AruUa4DVm9qa",
+        "outputId": "26d96083-2c37-4ea5-db84-890cd8301a6c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Distância ao máximo: 10\n",
+            "1.1999999999999993\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "h = (L**2 + y**2)**(1/2)\n",
+        "print(h)\n",
+        "sen = float(y/h)\n",
+        "print(sen)"
+      ],
+      "metadata": {
+        "id": "_GpfI8YXk48o",
+        "outputId": "3e86c8b2-9a84-426b-e7b8-4160c03fd873",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "232.40309808606253\n",
+            "0.005163442354609319\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# n é o número inteiro representando cada máximo\n",
+        "n = float(input('Valor de n = '))\n",
+        "d = n*lamb/sen\n",
+        "print('Esse e o valor de a: ',d)"
+      ],
+      "metadata": {
+        "id": "B3FOV1giqaYp",
+        "outputId": "bd99bea9-53e6-40ff-da1c-4d79d09808e1",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Valor de M = 1\n",
+            "Esse e o valo de a:  0.00012239896499199301\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Difraçâo"
+      ],
+      "metadata": {
+        "id": "0ubSNJAcSsg9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# L =  distância da Fenda até o anteparo\n",
+        "L = float(input('Distância até o anteparo' ))\n",
+        "# Posição do máximo central\n",
+        "centro = float(input('Posição do máximo central' ))\n",
+        "# lamb = comprimento de onda do laser\n",
+        "lamb = float(632e-09)"
+      ],
+      "metadata": {
+        "id": "aDKVH4ZsSvln"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y = float(input('Distância ao máximo: '))\n",
+        "if y <= centro:\n",
+        "    y = centro - y\n",
+        "else:\n",
+        "    y = -centro + y\n",
+        "print(y)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2cc7yLINS5-a",
+        "outputId": "f1f84013-337d-46d4-f274-37e97b67fa73"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Distância ao máximo: 20\n",
+            "8.8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "h = (L**2 + y**2)**(1/2)\n",
+        "print(h)\n",
+        "sen = float(y/h)\n",
+        "print(sen)"
+      ],
+      "metadata": {
+        "id": "VOE1-P4oTAPz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# m é o número inteiro representando cada mínimo\n",
+        "m = float(input('Valor de m = '))\n",
+        "a = m*lamb/sen\n",
+        "print('Esse e o valor de a: ',d)"
+      ],
+      "metadata": {
+        "id": "dWnDEr3zj2nO"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
